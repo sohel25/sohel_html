@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script>
+function validateForm() {
+  var name = document.forms["myForm"]["name"].value;
+   var email = document.forms["myForm"]["email"].value;
+     var gender  = document.forms["myForm"]["gender"].value;
+     var number= document.forms["myForm"]["number"].value;
+  if (name == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+   if (email == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+   if (number == "") {
+    alert("Number must be filled out");
+    return false;
+  }
+   if (gender == "") {
+    alert("Please select Gender");
+    return false;
+  }
+  showMessage()
+ 
+}
+ function showMessage(){
+   
+                    
+document.getElementById('f1').innerHTML = document.myForm.name.value;
+document.getElementById('f2').innerHTML = document.myForm.email.value;
+
+document.getElementById('f3').innerHTML = document.myForm.gender.value;
+
+document.getElementById('f4').innerHTML = document.myForm.number.value;
+
+        }
+</script>
+</head>
+<body>
+    <div class="header">
+ <img src="download.png">
+  <div class="header-right">
+    <a class="active" href="form.html">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+     <a href="index.html">Index</a>
+      
+ <input type="text" placeholder="Search.." name="search">
+  <button type="submit"><i class="fa fa-search"></i></button>
+
+  </div>
+ 
+</div>
+<div class="container">
+<h2 style="text-align: center;">Assignment Form</h2>
+
+<a href="http://www.facebook.com/" class="fa fa-facebook"></a>
+<a href="http://www.twitter.com/" class="fa fa-twitter"></a>
+<a href="http://www.linkedin.com/"  class="fa fa-linkedin"></a>
+<a href="http://www.gmail.com/" class="fa fa-google"></a>
+ <form name="myForm" method="post" onsubmit="validateForm(event.preventDefault()
+)"  >
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" autocomplete="off"><br>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" autocomplete="off">
+  
+  </div>
+  <div class="form-group">
+    <label for="gender">Gender</label><br>
+  <!-- <input type="radio" id="gender" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br> -->
+  <select name="gender">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+  </select>
+  </div>
+   <div class="form-group">
+    <label for="number">Number</label>
+    <input type="number" class="form-control" id="number" min="10" placeholder="Enter Your Phone Number" name="number"><br>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+   </div>
+</form>
+<h3 style="text-align: center;"> Display User Details</h3>
+<p id="f1"></p>
+<p id="f2"></p>
+<p id="f3"></p>
+<p id="f4"></p>
+
+
+ <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+
+      <div class="container">
+        <div class="row">
+           <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); text-align: center;">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">BestPeers</a>
+  </div>
+
+        </div>
+      </div>
+</footer>
+
+ </body>
+</html>
